@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://di5nsv75igrj8"
+path="res://.godot/imported/coin.wav-bc66b1d891b8402e1ca3e29cf7f12862.sample"
+
+[deps]
+
+source_file="res://Assets/Platformer - desert/Tileset/brackeys_platformer_assets/sounds/coin.wav"
+dest_files=["res://.godot/imported/coin.wav-bc66b1d891b8402e1ca3e29cf7f12862.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
