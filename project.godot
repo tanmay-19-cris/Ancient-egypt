@@ -10,10 +10,15 @@ config_version=5
 
 [application]
 
-config/name="hackclub"
+config/name="Ancient Adventure"
+run/main_scene="uid://qvbmcnduvmcj"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
