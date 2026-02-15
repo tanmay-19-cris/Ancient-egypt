@@ -82,17 +82,20 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xo3ru"]
-radius = 15.033297
+radius = 5.0
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 5
+collision_layer = 2
 script = ExtResource("1_hjaqi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1, -27)
+position = Vector2(-13.75, -47.125)
+scale = Vector2(0.33695653, 0.33181825)
 sprite_frames = SubResource("SpriteFrames_dk1vr")
 autoplay = "default"
 frame_progress = 0.24477439
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -17)
+position = Vector2(-15, -43)
 shape = SubResource("CircleShape2D_xo3ru")
