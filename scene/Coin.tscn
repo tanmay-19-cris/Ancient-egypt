@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://blshoxwbbv4f1"]
+[gd_scene load_steps=21 format=3 uid="uid://blshoxwbbv4f1"]
 
 [ext_resource type="Texture2D" uid="uid://csd6n3wsn364h" path="res://Assets/brackeys_platformer_assets/sprites/coin.png" id="1_8lbxk"]
 [ext_resource type="Script" uid="uid://b6l4aqw64gr68" path="res://scene/Scripts/coin.gd" id="1_sb3xh"]
+[ext_resource type="AudioStream" uid="uid://di5nsv75igrj8" path="res://Assets/brackeys_platformer_assets/sounds/coin.wav" id="3_gqtf3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bcded"]
 atlas = ExtResource("1_8lbxk")
@@ -98,6 +99,66 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_8lbxk"]
 radius = 4.0
 
+[sub_resource type="Animation" id="Animation_hpxf2"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_4s0s2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xohak"]
+_data = {
+&"RESET": SubResource("Animation_4s0s2"),
+&"new_animation": SubResource("Animation_hpxf2")
+}
+
 [node name="Coin" type="Area2D"]
 collision_mask = 2
 script = ExtResource("1_sb3xh")
@@ -109,5 +170,14 @@ frame_progress = 0.06799342
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_8lbxk")
+
+[node name="pickupsound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gqtf3")
+bus = &"SFX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_xohak")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
