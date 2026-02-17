@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8kfawngbd800"
-path="res://.godot/imported/fruit.png-1ab13c3618870daa299c542e54d670cc.ctex"
+uid="uid://csd6n3wsn364h"
+path="res://.godot/imported/coin.png-ceee451e2317fbea33b56f95d10ba980.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Platformer - desert/Tileset/brackeys_platformer_assets/sprites/fruit.png"
-dest_files=["res://.godot/imported/fruit.png-1ab13c3618870daa299c542e54d670cc.ctex"]
+source_file="res://Assets/brackeys_platformer_assets/sprites/coin.png"
+dest_files=["res://.godot/imported/coin.png-ceee451e2317fbea33b56f95d10ba980.ctex"]
 
 [params]
 

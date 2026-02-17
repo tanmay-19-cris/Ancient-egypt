@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7i6r8o85oftt"]
 
-[ext_resource type="Texture2D" uid="uid://dummxsmfup0mc" path="res://Assets/Platformer - desert/Tileset/brackeys_platformer_assets/sprites/platforms.png" id="1_4mi1v"]
+[ext_resource type="Texture2D" uid="uid://dummxsmfup0mc" path="res://Assets/brackeys_platformer_assets/sprites/platforms.png" id="1_4mi1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iffgu"]
 size = Vector2(32, 8)
