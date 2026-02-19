@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkodlugqtw3xm"]
+
+[ext_resource type="Texture2D" uid="uid://dlamh4u64tsbc" path="res://360_F_114471205_0O1mMyKE100dWY4kqoDKBNYJDto53kkt.jpg" id="1_hcv2g"]
+[ext_resource type="Script" uid="uid://rplw8runllmp" path="res://animation_1.gd" id="1_tju5u"]
+[ext_resource type="FontFile" uid="uid://bfpquf4m7gsqr" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_tju5u"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b73qx"]
+texture = ExtResource("1_hcv2g")
+modulate_color = Color(0.42237097, 0.42237106, 0.4223709, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c86wu"]
+bg_color = Color(12.201406, 11.567544, 11.14497, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.4862745)
+shadow_size = 15
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcv2g"]
+bg_color = Color(7.3534904, 7.016358, 6.6262684, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.4862745)
+shadow_size = 15
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tju5u"]
+bg_color = Color(5.113626, 5.162031, 5.0093937, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.4862745)
+shadow_size = 15
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b73qx"]
+
+[node name="Animation1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 1.0
+offset_right = -3.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tju5u")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_b73qx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.25
+offset_top = -27.0
+offset_right = 172.25
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.011056603, 0.011056603, 0.011056603, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_c86wu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_hcv2g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tju5u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b73qx")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.011056603, 0.011056603, 0.011056603, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_c86wu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_hcv2g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tju5u")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b73qx")
+text = "Exit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.5
+offset_top = -221.0
+offset_right = 296.5
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 10
+theme_override_fonts/font = ExtResource("2_tju5u")
+theme_override_font_sizes/font_size = 60
+text = "Ancient Adventure"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_exit_2_pressed"]
